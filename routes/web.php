@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\User;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome');
+    $users = User::all();
+    return Inertia::render('Welcome', compact('users'));
 })->name('home');
 
 Route::get('dashboard', function () {

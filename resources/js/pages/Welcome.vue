@@ -1,5 +1,8 @@
-<script setup lang="ts">
+<script setup>
 import { Head, Link } from '@inertiajs/vue3';
+
+const props = defineProps(['users']);
+
 </script>
 
 <template>
@@ -118,7 +121,7 @@ import { Head, Link } from '@inertiajs/vue3';
                         </li>
                     </ul>
                 </div>
-                <div
+                <!-- <div
                     class="relative -mb-px aspect-335/376 w-full shrink-0 overflow-hidden rounded-t-lg bg-[#fff2f2] dark:bg-[#1D0002] lg:-ml-px lg:mb-0 lg:aspect-auto lg:w-[438px] lg:rounded-r-lg lg:rounded-t-none"
                 >
                     <svg
@@ -779,6 +782,13 @@ import { Head, Link } from '@inertiajs/vue3';
                     <div
                         class="absolute inset-0 rounded-t-lg shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] lg:overflow-hidden lg:rounded-r-lg lg:rounded-t-none"
                     />
+                </div> -->
+                <div
+                    class="relative -mb-px aspect-335/376 w-full shrink-0 overflow-hidden rounded-t-lg bg-[#fff2f2] dark:bg-white] lg:-ml-px lg:mb-0 lg:aspect-auto lg:w-[438px] lg:rounded-r-lg lg:rounded-t-none"
+                >
+                    <pre v-for="user in props.users" :key="user.id">
+                        {{ user }}
+                    </pre>
                 </div>
             </main>
         </div>
